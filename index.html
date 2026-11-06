@@ -6,7 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-  <!DOCTYPE html>
+    
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -784,7 +785,7 @@ footer {
             <p>Check your ticket progress.</p>
             <button class="outline-btn"
                 onclick="document.getElementById('myTickets').scrollIntoView({behavior:'smooth'})">
-                Track Ticket ↗️
+                Track Ticket ↗
             </button>
         </div>
 
@@ -793,7 +794,7 @@ footer {
             <h3>Contact Support</h3>
             <p>Get help from our team.</p>
             <button class="outline-btn" onclick="showContact()">
-                Contact Us ☎️
+                Contact Us ☎
             </button>
         </div>
 
@@ -864,7 +865,7 @@ footer {
                 <label class="upload-box">
                     <input type="file" id="screenshot"
                         accept="image/png,image/jpeg,.log">
-                    <div style="font-size:25px">☁️</div>
+                    <div style="font-size:25px">☁</div>
                     <strong>Click to upload</strong> or drag and drop
                     <p>PNG, JPG or LOG files up to 10MB</p>
                     <p id="fileName"></p>
@@ -929,8 +930,8 @@ footer {
         <button onclick="filterManager('In Progress')">◷ In Progress</button>
         <button onclick="filterManager('Resolved')">✓ Resolved</button>
         <button onclick="showToast('Employee management is a demo feature.')">♙ Employees</button>
-        <button onclick="showToast('Settings are coming soon.')">⚙️ Settings</button>
-        <button style="margin-top:35px" onclick="showCustomer()">↗️ Public Portal</button>
+        <button onclick="showToast('Settings are coming soon.')">⚙ Settings</button>
+        <button style="margin-top:35px" onclick="showCustomer()">↗ Public Portal</button>
     </aside>
 
     <main class="manager-main">
@@ -1296,7 +1297,7 @@ function renderCustomerTickets() {
 
     if(filtered.length === 0) {
         tbody.innerHTML =
-            <tr><td colspan="5" class="empty-state">No tickets found.</td></tr>;
+            `<tr><td colspan="5" class="empty-state">No tickets found.</td></tr>`;
         return;
     }
 
@@ -1381,7 +1382,7 @@ function renderManagerTickets() {
 
     if(filtered.length === 0) {
         tbody.innerHTML =
-            <tr><td colspan="4" class="empty-state">No tickets found.</td></tr>;
+            `<tr><td colspan="4" class="empty-state">No tickets found.</td></tr>`;
         return;
     }
 
@@ -1425,7 +1426,7 @@ function renderDetails() {
     const content = document.getElementById("detailsContent");
 
     if(!ticket) {
-        content.innerHTML = <div class="empty-state">Select a ticket.</div>;
+        content.innerHTML = `<div class="empty-state">Select a ticket.</div>`;
         return;
     }
 
@@ -1474,7 +1475,7 @@ function renderDetails() {
                 <label>Priority</label>
                 <select id="editPriority">
                     ${["Low","Medium","High","Critical"].map(p =>
-                        <option ${ticket.priority === p ? "selected" : ""}>${p}</option>
+                        `<option ${ticket.priority === p ? "selected" : ""}>${p}</option>`
                     ).join("")}
                 </select>
             </div>
@@ -1483,7 +1484,7 @@ function renderDetails() {
                 <label>Status</label>
                 <select id="editStatus">
                     ${["Open","In Progress","Resolved"].map(s =>
-                        <option ${ticket.status === s ? "selected" : ""}>${s}</option>
+                        `<option ${ticket.status === s ? "selected" : ""}>${s}</option>`
                     ).join("")}
                 </select>
             </div>
@@ -1494,7 +1495,7 @@ function renderDetails() {
             <label>Assignee</label>
             <select id="editAssignee">
                 ${["Unassigned","Marcus Vance","Sarah Jenkins","Alex Morgan"].map(a =>
-                    <option ${ticket.assignee === a ? "selected" : ""}>${a}</option>
+                    `<option ${ticket.assignee === a ? "selected" : ""}>${a}</option>`
                 ).join("")}
             </select>
         </div>
@@ -1693,3 +1694,9 @@ renderManagerTickets();
 renderDetails();
 
 </script>
+
+</body>
+</html>
+
+</body>
+</html>
